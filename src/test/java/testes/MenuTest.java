@@ -38,6 +38,10 @@ public class MenuTest {
         driver.manage().timeouts().pageLoadTimeout(4, TimeUnit.SECONDS);
     }
 
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
 
     @Test
     public void checkMenuElements(){
@@ -61,5 +65,20 @@ public class MenuTest {
 
 
     }
+    @Test
+    public void shoppingCartTest() {
 
+        driver.get(HOME_URL);
+
+        WebElement computers = driver.findElement(By.xpath("//a[@href='/computers']"));
+
+        computers.click();
+
+        driver.get("http://demo.nopcommerce.com/computers");
+
+        WebElement desktops = driver.findElement(By.xpath("//img[@alt='Picture for category Desktops']"));
+
+        desktops.click();
+
+    }
 }

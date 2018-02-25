@@ -40,8 +40,6 @@ public class HomePage {
     private WebElement giftCardsButton;
 
 
-
-
 //Methods
     public void openHompePage(){
         }
